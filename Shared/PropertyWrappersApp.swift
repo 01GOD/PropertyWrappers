@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct PropertyWrappersApp: App {
+    @StateObject var dataProvider = DataProvider()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EnvironmentUsingView()
+                .environmentObject(dataProvider)
+            
         }
     }
 }
